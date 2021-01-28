@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="900.0" style="-fx-background-color: #282b30;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLDocumentController">
+   <children>
+      <Label layoutX="100.0" layoutY="6.0" prefHeight="175.0" prefWidth="612.0" text="Bottienohjaushässäkkä" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Lucida Sans Unicode" size="48.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="anchorPaneRopotti" layoutX="90.0" prefHeight="640.0" prefWidth="819.0" style="-fx-background-color: #282b30;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ToggleButton fx:id="toggleBtnRopottiStatus" contentDisplay="CENTER" layoutX="46.0" layoutY="132.0" mnemonicParsing="false" onAction="#toggleBtnClicked" style="-fx-background-color: transparent;" text="Set Status" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="200.0" fitWidth="90.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/grey-rounded-button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ToggleButton>
+            <TextField fx:id="textFieldRopottiMsg" layoutX="46.0" layoutY="396.0" prefHeight="88.0" prefWidth="195.0" promptText="Write message here.." />
+            <Button fx:id="btnRopottiSend" contentDisplay="CENTER" layoutX="38.0" layoutY="484.0" mnemonicParsing="false" onAction="#btnSendClicked" style="-fx-background-color: transparent;" text="Send" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="200.0" fitWidth="90.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/grey-rounded-button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <TextField fx:id="textFieldRopottiPrefix" layoutX="46.0" layoutY="232.0" promptText="Default:  &quot;+&quot;" />
+            <Button fx:id="btnPrefix1" contentDisplay="CENTER" layoutX="38.0" layoutY="257.0" mnemonicParsing="false" onAction="#btnPrefixClicked" style="-fx-background-color: transparent;" text="Change Prefix" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="200.0" fitWidth="90.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/grey-rounded-button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="50.0" layoutY="14.0" prefHeight="31.0" prefWidth="489.0" text="ROPOTTI" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="Lucida Sans Unicode" size="48.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="textFieldRopottiQuotet" editable="false" layoutX="405.0" layoutY="284.0" prefHeight="200.0" prefWidth="200.0">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </TextArea>
+            <Button fx:id="btnRopottiQuotet" contentDisplay="CENTER" layoutX="405.0" layoutY="484.0" mnemonicParsing="false" onAction="#btnQuotetClicked" style="-fx-background-color: transparent;" text="Print Quotes" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="200.0" fitWidth="90.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/grey-rounded-button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label fx:id="lblRopottiStatus" layoutX="152.0" layoutY="150.0" prefHeight="17.0" prefWidth="76.0" text="OFFLINE" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="640.0" prefWidth="90.0" style="-fx-background-color: #1e2124;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="btnRopotti" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="210.0" mnemonicParsing="false" onAction="#changeBot" opacity="0.87" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent;" text="Ropotti" textFill="#f5f3f3">
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/avatar1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Button>
+            <Button fx:id="btnKuvatus" contentDisplay="TOP" layoutX="10.0" layoutY="102.0" mnemonicParsing="false" onAction="#changeBot" opacity="0.87" style="-fx-background-color: transparent;" text="Kuvatus" textFill="#eeeaea">
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/avatar1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Button>
+            <Button fx:id="btnCloseProgram" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="17.0" layoutY="519.0" mnemonicParsing="false" onAction="#btnCloseClicked" style="-fx-background-color: transparent;" text="Close " textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/shutdown.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <Bloom />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="908.0" prefHeight="640.0" prefWidth="90.0" style="-fx-background-color: #1e2124;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane fx:id="anchorPaneKuvatus" layoutX="90.0" prefHeight="640.0" prefWidth="819.0" style="-fx-background-color: #282b30;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ToggleButton fx:id="toggleBtnKuvatusJoku" contentDisplay="CENTER" layoutX="46.0" layoutY="132.0" mnemonicParsing="false" onAction="#toggleBtnClicked" style="-fx-background-color: transparent;" text="Set Status" textFill="WHITE" AnchorPane.leftAnchor="46.0">
+               <graphic>
+                  <ImageView fitHeight="200.0" fitWidth="90.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/grey-rounded-button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ToggleButton>
+            <TextField fx:id="textFieldKuvatusMsg" layoutX="46.0" layoutY="396.0" prefHeight="88.0" prefWidth="195.0" promptText="Write message here.." AnchorPane.leftAnchor="46.0" />
+            <Button fx:id="btnKuvatusSend" contentDisplay="CENTER" layoutX="38.0" layoutY="484.0" mnemonicParsing="false" onAction="#btnSendClicked" style="-fx-background-color: transparent;" text="Send" textFill="WHITE" AnchorPane.leftAnchor="38.0">
+               <graphic>
+                  <ImageView fitHeight="200.0" fitWidth="90.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/grey-rounded-button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <TextField fx:id="textFieldKuvatusPrefix" layoutX="46.0" layoutY="232.0" promptText="Default:  &quot;!&quot;" AnchorPane.leftAnchor="46.0" />
+            <Button fx:id="btnPrefixKuvatus" contentDisplay="CENTER" layoutX="38.0" layoutY="257.0" mnemonicParsing="false" onAction="#btnPrefixClicked" style="-fx-background-color: transparent;" text="Change Prefix" textFill="WHITE" AnchorPane.leftAnchor="38.0">
+               <graphic>
+                  <ImageView fitHeight="200.0" fitWidth="90.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/grey-rounded-button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="46.0" layoutY="14.0" prefHeight="77.0" prefWidth="249.0" text="KUVATUS" textFill="#f2efef" underline="true" AnchorPane.leftAnchor="46.0">
+               <font>
+                  <Font name="Lucida Sans Unicode" size="48.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblKuvatusStatus" layoutX="152.0" layoutY="150.0" prefHeight="17.0" prefWidth="90.0" text="OFFLINE" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
